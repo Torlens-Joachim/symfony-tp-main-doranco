@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: rgb(33, 33, 33);
+    color: white
+}
+h1{
+    text-align: center;
+}
+img {
+    width: 100%;
+}
+
+.button {
+    background-color: royalblue;
+    padding: 0.6em;
+    border-radius: 0.2em;
+    color:whitesmoke;
+    border: none;
+}
+
+
+.button:hover {
+    background-color: rgb(103, 137, 238);
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+}
+
+.hero img {
+    width: 50%;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: large;
+    transition: all 0.2s ease-in-out;
+}
+
+nav a:hover {
+    color: gray;
+}
+
+nav {
+    background-color: rgb(26, 50, 121);
+    padding: 0.5em;
+}
+
+nav ul {
+    display: flex;
+    gap: 0.5em
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+}
+input, textarea{
+    padding: 0.8em;
+    display: block;
+    width: 100%;
+    background-color: rgb(67, 67, 67);
+    border: none;
+    border-radius: 0.2em;
+    box-shadow: 0px 0px 10px -3px #00000085;
+
+}
+
+.active
+{
+    border-bottom: 1px solid gray;
+}
+
+.header {
+    display: flex;
+}
+
+
+    /* Centrage de la carte */
+    .card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .task-item {
+        list-style: none;
+        margin-bottom: 20px;
+        background-color: #a74b4b;
+        padding: 2rem;
+    }
+
+    /* Style pour les boutons */
+    .status-button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        color: #fff;
+    }
+
+    .status-button.finished {
+        background-color: #28a745; /* Vert pour fini */
+    }
+
+    .status-button.not-finished {
+        background-color: #dc3545; /* Rouge pour non fini */
+    }

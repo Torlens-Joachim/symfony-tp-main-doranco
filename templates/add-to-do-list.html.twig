@@ -1,0 +1,60 @@
+{% extends "layout.html.twig" %}
+
+{% block main %}
+	<h1>
+		Ajouter une liste de taches
+	</h1>
+	<form method="POST" action="/processToDoList">
+		<input type="text" name="name" placeholder="Entrez le nom de la liste de taches">
+		<input type="text" name="course" placeholder='Entrez le nom de la formation'>
+		<textarea name="task" placeholder='Entrez la tache à faire'></textarea>
+		<button class="button">
+			Valider
+		</button>
+		{% if success is defined %}
+			<p>{{ message }}</p>
+		{% endif %}
+	</form>
+
+	<section class="card">
+		<div class="card-container">
+			{% if tasks is defined and tasks|length > 0 %}
+				<ul>
+					{% for task in tasks %}
+						<li class="task-item">
+							<h3>{{ task.getName() }}</h3>
+							<p>Formation :
+								{{ task.getCourse() }}</p>
+							<p>
+								{% for t in task.getTask() %}
+									<ul>
+										<li>{{ t.getName() }}</li>
+									</ul>
+									<a href={{'/processIsFinished/' ~ t.getId()}}>
+										<button class="status-button {{ t.isFinished() ? 'finished' : 'not-finished' }}">
+											{{ t.isFinished() ? 'Fini' : 'Pas fini' }}
+										</button>
+									</a>
+								{% endfor %}
+							</p>
+
+							<form method="POST" action="/processAddToDoListTask">
+								<textarea name="task" placeholder='Rajouter une tache à faire'></textarea>
+								<button class="button">
+									Valider
+								</button>
+								{% if success is defined %}
+									<p>{{ message }}</p>
+								{% endif %}
+							</form>
+						</li>
+					{% endfor %}
+				</ul>
+			{% else %}
+				<p>Aucune tâche à afficher.</p>
+			{% endif %}
+		</div>
+	</section>
+
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% set route =  path(app.request.attributes.get('_route'))%}
+
+<nav>
+	<a href={{path('home')}} class={{route == "/" ? "active" : ""}}>
+		Accueil
+	</a>
+	<a href={{path('contact')}} class={{route == "/contact" ? "active" : ""}}>
+		Contact
+	</a>
+</nav>
